@@ -13,7 +13,7 @@ expose:
     secretName: "tls-gitlab-ingress"
     certExpiry: 3560
   ingress:
-    host: gitlab.dbpaas.alibaba-inc.com
+    host: helmgit.dbpaas.alibaba-inc.com
     annotations:
       ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -114,8 +114,8 @@ core:
     TZ: Asia/Shanghai
     GITLAB_TIMEZONE: Beijing
 
-    # GITLAB_HOST: localhost
-    # GITLAB_PORT: "80"
+    # GITLAB_HOST: helmgit.dbpaas.alibaba-inc.com 
+    GITLAB_PORT: "8080"
     # GITLAB_SSH_PORT: "22"
 
     GITLAB_SECRETS_DB_KEY_BASE: bf2e47b68d6cafaef1d767e628b619365becf27571e10f196f98dc85e7771042b9203199d39aff91fcb6837c8ed83f2a912b278da50999bb11a2fbc0fba52964

@@ -62,7 +62,9 @@ spec:
       {{- if not .Values.persistence.enabled }}
       volumes:
       - name: data
-        emptyDir: {}
+        hostPath:
+          path: /disk1/redis 
+          type: DirectoryOrCreate
       {{- else if $redis.existingClaim }}
       volumes:
       - name: data

@@ -79,7 +79,9 @@ spec:
       {{- if not .Values.persistence.enabled }}
       volumes:
       - name: "database-data"
-        emptyDir: {}
+        hostPath:
+          path: /disk1/database-data
+          type: DirectoryOrCreate 
       {{- else if $database.existingClaim }}
       volumes:
       - name: "database-data"

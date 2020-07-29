@@ -98,7 +98,9 @@ spec:
           {{- if not .Values.persistence.enabled }}
           volumes:
           - name: data
-            emptyDir: {}
+            hostPath:
+              path: /disk1/core
+              type: DirectoryOrCreate
           {{- else if $core.existingClaim }}
           volumes:
           - name: data
